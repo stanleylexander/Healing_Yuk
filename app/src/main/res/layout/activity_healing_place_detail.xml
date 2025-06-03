@@ -9,11 +9,12 @@
 
     <ImageView
         android:id="@+id/imgDetail"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="200dp"
         android:scaleType="centerCrop"
-        tools:layout_editor_absoluteX="4dp"
-        tools:layout_editor_absoluteY="-3dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
     <TextView
@@ -48,5 +49,16 @@
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtDetailCategory" />
+
+    <Button
+        android:id="@+id/btnFavourite"
+        style="@style/Widget.Material3.Button"
+        android:layout_width="110dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="140dp"
+        android:layout_marginEnd="20dp"
+        android:text="Favourite"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
