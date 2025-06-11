@@ -52,7 +52,7 @@ class ExploreFragment : Fragment() {
 
     private fun fetchData() {
         val q = Volley.newRequestQueue(requireContext())
-        val url = "http://192.168.100.11/nmp_project/get_healing_places.php"
+        val url = "https://ubaya.xyz/hybrid/160422057/get_healing_places.php"
 
         val stringRequest = StringRequest(
             Request.Method.POST, url,

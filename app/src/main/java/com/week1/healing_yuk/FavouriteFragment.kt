@@ -1,5 +1,6 @@
 package com.week1.healing_yuk
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -50,8 +51,11 @@ class FavouriteFragment : Fragment() {
     }
 
     private fun fetchData() {
+        val sp = this.getActivity()?.getSharedPreferences("user", Context.MODE_PRIVATE)
+        val id = sp?.getInt("id",0)
+
         val q = Volley.newRequestQueue(requireContext())
-        val url = "http://192.168.100.11/nmp_project/get_healing_places.php"
+        val url = "https://ubaya.xyz/hybrid/160422057/get_user_favourite.php?id="+id.toString() // nanti diubah
 
         val stringRequest = StringRequest(
             Request.Method.POST, url,

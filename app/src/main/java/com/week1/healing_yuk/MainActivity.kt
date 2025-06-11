@@ -1,5 +1,8 @@
 package com.week1.healing_yuk
 
+import android.content.Context
+import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -16,6 +19,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val sp = getSharedPreferences("user", Context.MODE_PRIVATE)
+        if (!sp.contains("id")) {
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+        }
 
         fragments.add(ExploreFragment())
         fragments.add(FavouriteFragment())

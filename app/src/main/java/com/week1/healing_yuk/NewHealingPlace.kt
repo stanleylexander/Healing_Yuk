@@ -30,18 +30,13 @@ class NewHealingPlace : AppCompatActivity() {
 
         binding.btnNewSubmit.setOnClickListener {
             val q = Volley.newRequestQueue(this)
-            val url = "http://192.168.100.11/nmp_project/new_healing_place.php"
+            val url = "https://ubaya.xyz/hybrid/160422057/new_healing_places.php"
 
             val stringRequest = object: StringRequest( // pakai anonymous class (class yg nggak pake file baru)
                 Request.Method.POST,
                 url,
-                {
-                    // success
-                    Toast.makeText(this, "Success", Toast.LENGTH_SHORT).show()
-                },{
-                    // failed
-                    Log.e("apiresult", it.message.toString())
-                }
+                {Toast.makeText(this, "Success", Toast.LENGTH_SHORT).show()}, // jika sukses
+                {Log.e("apiresult", it.message.toString())} // jika gagal
             ) // header
             {
                 override fun getParams(): Map<String, String> {
