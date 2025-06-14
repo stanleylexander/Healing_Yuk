@@ -97,30 +97,30 @@
 
     </androidx.cardview.widget.CardView>
 
-    <Button
-        android:id="@+id/buttonSignUp"
-        style="@style/Widget.Material3.Button.TextButton.Dialog"
-        android:layout_width="83dp"
-        android:layout_height="51dp"
-        android:text="Sign Up"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/textView"
-        tools:layout_editor_absoluteY="529dp" />
-
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="76dp"
+        android:layout_marginStart="48dp"
         android:text="New to Healing Yuk?"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="541dp" />
 
+    <Button
+        android:id="@+id/buttonSignUp"
+        style="@style/Widget.Material3.Button.TextButton.Dialog"
+        android:layout_width="wrap_content"
+        android:layout_height="51dp"
+        android:layout_marginEnd="64dp"
+        android:text="Create an Account"
+        android:textColor="#3F51B5"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteY="526dp" />
+
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/logo"
         android:layout_width="307dp"
         android:layout_height="194dp"
         app:srcCompat="@drawable/logo_healing_yuk_"
