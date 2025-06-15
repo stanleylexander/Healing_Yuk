@@ -26,9 +26,9 @@ class ProfileFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val sp = this.getActivity()?.getSharedPreferences("user", Context.MODE_PRIVATE)
 
-        binding.txtNamaProfile.text = sp?.getString("name", "nama null")
-        binding.txtEmailProfile.text = sp?.getString("email", "email null")
-        binding.txtJoinProfile.text = sp?.getString("created_at", "tanggal tidak tersedia")
-        binding.txtFavouriteProfile.text = sp?.getInt("total_favorites", 0).toString()
+        binding.editNameProfile.setText(sp?.getString("name", "nama null"))
+        binding.editEmailProfile.setText(sp?.getString("email", "email null"))
+        binding.editDateProfile.setText(sp?.getString("created_at", "tanggal tidak tersedia"))
+        binding.editFavouriteLoc.setText(sp?.getInt("total_favorites", 0).toString())
     }
 }
