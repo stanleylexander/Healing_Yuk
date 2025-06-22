@@ -83,6 +83,18 @@ class NewHealingPlace : AppCompatActivity() {
         })
 
         binding.btnNewSubmit.setOnClickListener {
+            val name = binding.editNewLocationName.text.toString().trim()
+            val imageUrl = binding.editNewImageURL.text.toString().trim()
+            val category = binding.spinnerNewCategory.selectedItem.toString().trim()
+            val shortDesc = binding.editNewShortDesc.text.toString().trim()
+            val fullDesc = binding.editNewLongDesc.text.toString().trim()
+
+            // Validasi inputan
+            if (name.isEmpty() || imageUrl.isEmpty() || category.isEmpty() || shortDesc.isEmpty() || fullDesc.isEmpty()) {
+                Toast.makeText(this, "Semua field harus diisi!", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
             val q = Volley.newRequestQueue(this)
             val url = "https://ubaya.xyz/hybrid/160422057/new_healing_places.php"
 
@@ -95,11 +107,11 @@ class NewHealingPlace : AppCompatActivity() {
             {
                 override fun getParams(): Map<String, String> {
                     return hashMapOf(
-                        "name" to binding.editNewLocationName.text.toString(),
-                        "image_url" to binding.editNewImageURL.text.toString(),
-                        "category" to binding.spinnerNewCategory.selectedItem.toString(),
-                        "short_desc" to binding.editNewShortDesc.text.toString(),
-                        "full_desc" to binding.editNewLongDesc.text.toString(),
+                        "name" to name,
+                        "image_url" to imageUrl,
+                        "category" to category,
+                        "short_desc" to shortDesc,
+                        "full_desc" to fullDesc,
                     )
                 }
             } // body
