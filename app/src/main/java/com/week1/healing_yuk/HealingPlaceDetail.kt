@@ -86,6 +86,11 @@ class HealingPlaceDetail : AppCompatActivity() {
                         val obj = JSONObject(it)
                         if (obj.getString("result") == "OK") {
                             val successMessage = obj.getString("message")
+
+                            //Change heart real time
+                            isFavourite = !isFavourite
+                            updateFavouriteIcon()
+
                             Toast.makeText(this, successMessage, Toast.LENGTH_SHORT).show()
                         } else {
                             val errorMessage = obj.getString("message")

@@ -24,6 +24,16 @@ class ChangePassword : AppCompatActivity() {
         binding = ActivityChangePasswordBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        //Back Toolbar
+        setSupportActionBar(binding.toolbar2)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
+
+        binding.toolbar2.setNavigationOnClickListener {
+            finish()
+        }
+
+        //Button Change Password Logic
         binding.btnChangePassword.setOnClickListener {
             val sp: SharedPreferences = getSharedPreferences("user", Context.MODE_PRIVATE)
             val id = sp.getInt("id", -1)
