@@ -55,7 +55,7 @@ class FavouriteFragment : Fragment() {
         val id = sp?.getInt("id",0)
 
         val q = Volley.newRequestQueue(requireContext())
-        val url = "https://ubaya.xyz/hybrid/160422057/get_user_favourite.php?id="+id.toString() // nanti diubah
+        val url = "https://ubaya.xyz/hybrid/160422057/get_user_favourite.php?id="+id.toString()
 
         val stringRequest = StringRequest(
             Request.Method.POST, url,

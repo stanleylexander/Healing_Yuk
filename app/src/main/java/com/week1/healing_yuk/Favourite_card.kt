@@ -31,12 +31,11 @@ class Favourite_card(
 
         with(holder.binding){
             Picasso.get().load(url).into(imgFavourite)
-            txtFavouriteName.text = LokasiHealingsFavourite[position].name
+            if(LokasiHealingsFavourite[position].name.length <= 30){txtFavouriteName.text = LokasiHealingsFavourite[position].name}
+            else{txtFavouriteName.text = LokasiHealingsFavourite[position].name.slice(0..30)+"..."}
             txtFavouriteCategory.text = LokasiHealingsFavourite[position].category
 
             root.setOnClickListener { onItemClick(LokasiHealingsFavourite[position]) }
         }
     }
-
-
 }
