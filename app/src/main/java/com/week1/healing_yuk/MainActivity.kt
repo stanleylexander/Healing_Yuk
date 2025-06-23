@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
+import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -36,8 +37,24 @@ class MainActivity : AppCompatActivity() {
 
         binding.navigationView.setNavigationItemSelectedListener{
             when(it.itemId) {
-                R.id.itemChangePassword -> Snackbar.make(this,binding.root, "Change Password", Snackbar.LENGTH_SHORT).show()
-                R.id.itemLogout -> Snackbar.make(this,binding.root, "Logout", Snackbar.LENGTH_SHORT).show()
+                //Change Password
+                R.id.itemChangePassword -> {
+                    val intent = Intent(this, ChangePassword::class.java)
+                    startActivity(intent)
+                }
+
+                //Logout
+                R.id.itemLogout -> {
+                    val sp = getSharedPreferences("user", Context.MODE_PRIVATE)
+                    sp.edit().clear().apply() // hapus semua data sesi
+
+                    Toast.makeText(this, "Logout berhasil", Toast.LENGTH_SHORT).show()
+
+                    val intent = Intent(this, LoginActivity::class.java)
+                    intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                    startActivity(intent)
+                    finish()
+                }
             }
             binding.main.closeDrawer(GravityCompat.START)
             true
