@@ -53,11 +53,13 @@ class LoginActivity : AppCompatActivity() {
                         Toast.makeText(this, "Success", Toast.LENGTH_SHORT).show()
                         val intent = Intent(this,MainActivity::class.java)
                         startActivity(intent)
+                    } else {
+                        Toast.makeText(this, "Login failed: ${obj.getString("message")}", Toast.LENGTH_SHORT).show()
                     }
                 }, // jika sukses
                 {
                     Log.e("apiresult", it.message.toString())
-                    Toast.makeText(this, "login gagal", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "login failed", Toast.LENGTH_SHORT).show()
                 }
             ) // header
             {
