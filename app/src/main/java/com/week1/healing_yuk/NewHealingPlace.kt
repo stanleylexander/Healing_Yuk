@@ -31,6 +31,15 @@ class NewHealingPlace : AppCompatActivity() {
         binding = ActivityNewHealingPlaceBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        //Back Toolbar
+        setSupportActionBar(binding.toolbar4)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
+
+        binding.toolbar4.setNavigationOnClickListener {
+            finish()
+        }
+
         val categories = listOf("cafe", "resto", "warkop", "hotel", "karaoke", "arcade", "playground", "biliard", "bowling", "bar")
         val adapter = ArrayAdapter(this, R.layout.simple_spinner_item, categories)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)

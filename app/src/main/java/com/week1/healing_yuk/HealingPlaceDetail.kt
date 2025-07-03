@@ -26,6 +26,15 @@ class HealingPlaceDetail : AppCompatActivity() {
         binding = ActivityHealingPlaceDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        //Back Toolbar
+        setSupportActionBar(binding.toolbar3)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
+
+        binding.toolbar3.setNavigationOnClickListener {
+            finish()
+        }
+
         val data = intent.getParcelableExtra<HealingPlaces>("healing_place")
 
         if (data != null) {
@@ -36,6 +45,8 @@ class HealingPlaceDetail : AppCompatActivity() {
                 Picasso.get().load(data.image_url).into(imgDetail)
             }
 
+            //bikin nama toolbar
+            binding.toolbar3.title = data.name
             //FAVORITE BUTTON
             val sp = getSharedPreferences("user", Context.MODE_PRIVATE)
             val user_id = sp.getInt("id", 0)
