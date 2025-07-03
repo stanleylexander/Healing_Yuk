@@ -31,8 +31,8 @@ class SignUpActivity : AppCompatActivity() {
 
         binding.buttonSubmit.setOnClickListener {
             val q = Volley.newRequestQueue(this)
-            val url = "https://ubaya.xyz/hybrid/160422057/register_healing.php"
-
+            //val url = "https://ubaya.xyz/hybrid/160422057/register_healing.php"
+            val url = "https://ubaya.xyz/native/160422025/register_healing.php"
             if(binding.editTextPasswordReg.text.toString() == binding.editTextConfirmPasswordReg.text.toString()){
                 val stringRequest = object: StringRequest( // pakai anonymous class (class yg nggak pake file baru)
                     Request.Method.POST,

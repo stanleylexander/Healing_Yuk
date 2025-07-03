@@ -33,8 +33,8 @@ class LoginActivity : AppCompatActivity() {
 
         binding.buttonLogin.setOnClickListener {
             val q = Volley.newRequestQueue(this)
-            val url = "https://ubaya.xyz/hybrid/160422057/login_healing.php"
-
+            //val url = "https://ubaya.xyz/hybrid/160422057/login_healing.php"
+            val url = "https://ubaya.xyz/native/160422025/login_healing.php"
             val stringRequest = object: StringRequest( // pakai anonymous class (class yg nggak pake file baru)
                 Request.Method.POST,
                 url,

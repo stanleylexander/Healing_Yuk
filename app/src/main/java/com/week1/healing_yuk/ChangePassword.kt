@@ -58,8 +58,8 @@ class ChangePassword : AppCompatActivity() {
             }
 
             val q = Volley.newRequestQueue(this)
-            val url = "https://ubaya.xyz/native/160422029/change_password.php"
-
+            //val url = "https://ubaya.xyz/native/160422029/change_password.php"
+            val url = "https://ubaya.xyz/native/160422025/change_password.php"
             val stringRequest = object : StringRequest(
                 Request.Method.POST,
                 url,
