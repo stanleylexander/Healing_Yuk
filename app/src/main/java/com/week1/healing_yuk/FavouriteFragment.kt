@@ -67,12 +67,23 @@ class FavouriteFragment : Fragment() {
                     val sType = object : TypeToken<List<HealingPlaces>>() {}.type
                     LokasiHealingsFavourite.clear()
                     LokasiHealingsFavourite.addAll(Gson().fromJson(data.toString(), sType))
-                    binding.FavouriteRecView.adapter?.notifyDataSetChanged()
-                    Log.d("apiresult", LokasiHealingsFavourite.toString())
+                } else {
+                    LokasiHealingsFavourite.clear()
                 }
+
+                //Check if the list is empty
+                if (LokasiHealingsFavourite.isEmpty()) {
+                    binding.txtEmpty.visibility = View.VISIBLE
+                } else {
+                    binding.txtEmpty.visibility = View.GONE
+                }
+
+                binding.FavouriteRecView.adapter?.notifyDataSetChanged()
+                Log.d("apiresult", LokasiHealingsFavourite.toString())
             },
             { Log.e("apiresult", it.message.toString()) }
         )
+
         q.add(stringRequest)
     }
 }
