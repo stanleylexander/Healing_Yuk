@@ -40,6 +40,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:gravity="center|top"
                     android:orientation="vertical"
                     android:padding="10dp">
 
@@ -47,6 +48,7 @@
                         android:id="@+id/txtFavouriteName"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:gravity="top"
                         android:text="[Title]"
                         android:textSize="20sp" />
 
@@ -54,7 +56,8 @@
                         android:id="@+id/txtFavouriteCategory"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginVertical="15dp"
+                        android:layout_marginVertical="10dp"
+                        android:gravity="top"
                         android:text="[category]" />
                 </LinearLayout>
             </LinearLayout>
